@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1>tinyfeed-prototype</h1>
+  <h1>tinyfeed-full-typescript</h1>
   
   desktop feed aggregator app
   
