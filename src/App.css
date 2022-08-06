@@ -1,0 +1,145 @@
+.App {
+  text-align: center;
+}
+
+/* .reloading {
+  height: 40vmin;
+  pointer-events: none;
+} */
+
+
+.reloading {
+  color: rgb(180, 180, 180);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reloading {
+    animation: reloading-spin infinite 5s linear;
+  }
+}
+@keyframes reloading-spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+/* ------ content <blockquote> ------ */
+
+blockquote {
+  border-radius: 4px;
+  background: #f9f9f9;
+  border-left: 5px solid rgb(225, 225, 225);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+/*  ------ style tweets (at least for substack (?)) ------ */
+
+.tweet {
+  /* background-color: #61dafb; */
+  font-size: 0.75rem;
+  width: inherit;
+  padding: 10px;
+  border-width: 2px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  /* display: grid;
+  flex-direction: column;
+  row-gap: 10px;
+
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 10px; */
+}
+
+.tweet > a {
+  text-decoration: none;
+  color: black
+}
+
+.tweet-header {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: 20px 20px;
+  grid-template-areas:
+  "avatar author-name"     /* this layout is for a 3x3 grid */
+  "avatar author-at";
+
+  padding-bottom: 10px;
+}
+.tweet-user-avatar {
+  grid-area: avatar;
+
+  width:40px;
+  border-radius: 50%;
+}
+.tweet-author-name {
+  grid-area: author-name;
+
+  font-weight: bold;
+}
+.tweet-author {
+  grid-area: author-at;
+}
+.tweet-author-name, .tweet-author {
+  padding-left: 10px;
+}
+
+/* .tweet > ::target-text {
+  background-color: blue;
+} */
+
+.tweet-photos-container, .quoted-tweet, .tweet-footer {
+  margin-top: 10px;
+}
+
+.quoted-tweet {
+  border-left: 5px solid lightgray;
+  padding-left: 10px;
+  border-radius: 4px;
+}
+.quoted-tweet > p > .quote-tweet-name {
+  font-weight: bold;
+}
+
+a > .tweet-footer {
+  color:rgb(180, 180, 180);
+}
+.tweet-footer > .likes {
+  padding-left: 10px;
+}
